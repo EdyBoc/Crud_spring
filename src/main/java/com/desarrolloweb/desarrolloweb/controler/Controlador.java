@@ -28,4 +28,12 @@ private IpersonaService service;
         return "index";
     }
 
+    //Categories
+    @GetMapping("/listar")
+    public String listar2(Model model) {
+        List<Persona>personas=service.listar();
+        model.addAttribute("personas", personas);
+        return "index";
+    }
+
 }
