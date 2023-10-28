@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Etiquetas meta requeridas -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+    <script src="jspdf.debug.js"></script>
+
+    <!-- Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Iconos  css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <title>mvc</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+
+    <div class=" d-flex justify-content-center align-items-center vh-100" style=" background-color:#f1f1f1">
+
+        <div class=" p-3 rounded-5 text-secondary border border-dark container-sm container-md"
+            style="width: 85rem; background-color:#FFFFFF">
+
+                <button class="btn text-white" id="download" style="background-color: rgb(165, 8, 8);">
+                    <b>Generar PDF</b>
+
+                    <ion-icon name="document-attach-outline"></ion-icon>
+                </button>
+
+                <button class="btn text-white" id="download" style="background-color: rgb(71, 165, 8);">
+                    <b>Generar Excel</b>
+
+                    <ion-icon name="document-attach-outline"></ion-icon>
+                </button>
+
+                
+                <div id="pdf" style="background-color: white;">
+                    <h2></h2>
+                    <b>Categorias</b><br />
+
+                    <table class="table table-striped table-bordered" id="myTable">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>No</th>
+                                <th>Nombre del proveedor</th>
+                                <th>Telefono</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Proveedor A</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Proveedor B</td>
+                                <td>987-654-3210</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Proveedor C</td>
+                                <td>555-123-4567</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Proveedor D</td>
+                                <td>111-222-3333</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Proveedor E</td>
+                                <td>999-888-7777</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Proveedor F</td>
+                                <td>444-555-6666</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Proveedor G</td>
+                                <td>777-888-9999</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Proveedor H</td>
+                                <td>666-555-4444</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Proveedor I</td>
+                                <td>555-444-3333</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Proveedor J</td>
+                                <td>222-333-4444</td>
+                            </tr>
+                        </tbody>
+                    
+                    </table>
+
+             </div>
+            </div>
+        </div>
+    </div>
+    <!-- Iconos Scripts-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <!-- bootstrap@5.0.2 Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- funcion filtro de tablas-->
+    <script type="text/javascript">
+        $(function () {
+            $('#download').click(function () {
+                var options = {
+                };
+                var pdf = new jsPDF('p', 'pt', 'a4');
+                pdf.addHTML($("#pdf"), 15, 15, options, function () {
+                    pdf.save('Informe de categorias.pdf');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

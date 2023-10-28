@@ -160,7 +160,7 @@ public class Controlador {
         return "proveedores";
     }
 
-    // Agregar detalle de orden
+    // Agregar proveedores
     @PostMapping("/listadodeproveedores")
     public String agregarproveedores(Shippers shippers, Model model) {
         List<Shippers> proveedores = proveedoreserivece.listar();
@@ -169,10 +169,22 @@ public class Controlador {
         return "proveedores";
     }
 
-    // Mostrar clientes
+    // Mostrar proveedores
     @GetMapping("/formularioproveedores")
     public String formularioproveedores() {
         return "formularioproveedores";
+    }
+
+     // Mostrar grafica proveedores
+    @GetMapping("/grafica_cant_proveedores")
+    public String grafica_cant_proveedores() {
+        return "grafica_cant_proveedores";
+    }
+
+     // Mostrar grafica proveedores
+    @GetMapping("/plantilla")
+    public String plantilla() {
+        return "plantilla";
     }
 
 }
