@@ -14,6 +14,7 @@ import com.desarrolloweb.desarrolloweb.modelo.Categories;
 //Service Implementet donde se desarrolla toda la logica mas la interfas del service (metodos nada mas pero son logica)
 public class CategoriesService implements IcategoriesService {
 
+    
     @Autowired
     private ICategories Repository;
 

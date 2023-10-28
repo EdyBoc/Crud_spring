@@ -2,9 +2,16 @@ package com.desarrolloweb.desarrolloweb.modelo;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+
+@Table(name = "Employees")
+
 
 public class Employees {
 
@@ -14,6 +21,7 @@ public class Employees {
     private int Employeeid;
     private String Lastname;
     private String Firstname;
+
     private Date Birthdate;
     private String Photo;
     private String Notes;
